@@ -1,0 +1,8 @@
+17c17
+< auto eth0
+---
+> # auto eth0
+22a23
+> auto usb0
+27a29
+> 	dns-nameservers 1.1.1.1
