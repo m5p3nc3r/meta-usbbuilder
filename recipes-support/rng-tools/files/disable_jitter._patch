@@ -1,0 +1,4 @@
+1c1
+< EXTRA_ARGS="-r /dev/hwrng"
+---
+> EXTRA_ARGS="-r /dev/hwrng -x jitter"
