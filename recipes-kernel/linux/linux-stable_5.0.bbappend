@@ -2,6 +2,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 SRC_URI += " \
   file://usbgadget.cfg \
   file://docker.cfg \
+  file://docker2.cfg \
   file://tpm.cfg \
   file://usbgadget.patch \
 "
