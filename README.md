@@ -17,3 +17,23 @@ Depends on
 ````
 bitbake build core-image-minimal
 ````
+
+
+
+This is my current local.conf additions
+```
+MACHINE = "raspberrypi4-64"
+ENABLE_UART = "1"
+RPI_EXTRA_CONFIG = "dtoverlay=pi3-disable-bt"
+ENABLE_DWC2_PERIPHERAL = "1"
+ENABLE_KGDB = "1"
+# Ensure the kernel modules are added (for test/debug purposes - can remove later)
+CORE_IMAGE_EXTRA_INSTALL += " kernel-modules"
+
+# I think there is a bug in the u_serial driver where its not showing up in 
+# /proc/consoles with the version of the kernel used by the RPI.
+# Hopefully can remove this when we move to 5.5?
+SYSVINIT_ENABLED_GETTYS = "GS0"
+#SERIAL_CONSOLES = "115200;ttyGS0 115200;ttyAMA0"
+SERIAL_CONSOLES = "115200;ttyAMA0"
+```
