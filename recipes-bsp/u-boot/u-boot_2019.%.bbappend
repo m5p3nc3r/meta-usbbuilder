@@ -1,4 +1,4 @@
-do_compile_prepend () {
+do_compile_prepend_odroid-c2 () {
   # Fix the boot script when booting from emmc because u-boot seens to enumerate
   # the sd-card and the emmc even if the sd-card is not present.
   if [ -n "${@bb.utils.contains('MACHINE_FEATURES', 'emmc', 'emmc', '', d)}" ]; then
